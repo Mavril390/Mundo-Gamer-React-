@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Mavril390/Proyecto-React-MauricioMarinkovich-/static/css/main.6ed501f8.css",
+    "main.js": "/Mavril390/Proyecto-React-MauricioMarinkovich-/static/js/main.c0bc255b.js",
+    "static/js/787.69af1a8b.chunk.js": "/Mavril390/Proyecto-React-MauricioMarinkovich-/static/js/787.69af1a8b.chunk.js",
+    "index.html": "/Mavril390/Proyecto-React-MauricioMarinkovich-/index.html",
+    "main.6ed501f8.css.map": "/Mavril390/Proyecto-React-MauricioMarinkovich-/static/css/main.6ed501f8.css.map",
+    "main.c0bc255b.js.map": "/Mavril390/Proyecto-React-MauricioMarinkovich-/static/js/main.c0bc255b.js.map",
+    "787.69af1a8b.chunk.js.map": "/Mavril390/Proyecto-React-MauricioMarinkovich-/static/js/787.69af1a8b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6ed501f8.css",
+    "static/js/main.c0bc255b.js"
+  ]
+}
