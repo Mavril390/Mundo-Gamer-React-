@@ -1,3 +1,27 @@
+.elementoCentrado {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn--vinculo {
+  background-color: #376996;
+  border: 1px solid black;
+  font-size: 15px;
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  width: 200px;
+  border-radius: 20px;
+
+  transition: 0.5s all;
+}
+
+.btn--vinculo:hover {
+  background-color: #d8d4d5;
+  color: #1f487e;
+}
+
 .header {
   background-color: #1f487e;
   color: white;
@@ -31,7 +55,7 @@
 }
 
 .main__inicio {
-  height: 90vh;
+  /*height: 90vh;*/
 }
 
 .main__inicio--grid {
@@ -52,4 +76,51 @@
   text-align: center;
   font-weight: normal;
   align-self: start;
+}
+
+.main__contenido__productos{
+  flex-wrap: wrap;
+}
+
+.producto {
+  transition: all 1s;
+  width: 80%;
+}
+
+.producto__info--grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: "img nombre nombre"
+                        "img precio comprar";
+}
+
+.producto__img{
+  grid-area: img;
+  justify-self: center;
+}
+
+img{
+  width: 100%;
+  height: 100%;
+}
+
+.producto__info__nombre{
+  grid-area: nombre;
+  align-self: center;
+  font-size: 20px;
+  margin: 0;
+}
+.producto__info__precio{
+  grid-area: precio;
+  justify-self: center;
+  align-self: center;
+  font-size: 20px;
+  margin: 0;
+}
+.producto__info__comprar{
+  grid-area: comprar;
+  justify-self: center;
+  align-self: center;
+  height: 50%;
 }

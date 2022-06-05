@@ -1,6 +1,6 @@
 function CartWidget() {
     return(
-        <i class='bx bx-cart'></i>
+        <i className='bx bx-cart'></i>
     );
 }
 
