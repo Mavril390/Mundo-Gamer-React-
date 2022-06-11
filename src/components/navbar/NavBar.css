@@ -1,0 +1,27 @@
+.header {
+    background-color: #1f487e;
+    color: white;
+    position: sticky;
+    padding: 10px;
+  }
+  
+  .navbar-collapse {
+    justify-content: end;
+    align-items: center;
+  }
+  
+  .header__navegacion__lista {
+    list-style: none;
+  }
+  
+  .header__navegacion__lista__elemento {
+    color: white;
+    border-radius: 10px;
+    transition: all 0.5s;
+  }
+  
+  .header__navegacion__lista__elemento:hover{
+    color: white;
+    background-color: #0f233d;
+  }
+  

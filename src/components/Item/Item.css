@@ -1,0 +1,35 @@
+.producto__info--grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+        "img nombre nombre"
+        "img precio comprar";
+}
+
+.producto__img {
+    grid-area: img;
+    justify-self: center;
+    height: 200px;
+    width: 200px;
+}
+
+.producto__info__nombre {
+    grid-area: nombre;
+    align-self: center;
+    font-size: 20px;
+    margin: 0;
+}
+.producto__info__precio {
+    grid-area: precio;
+    justify-self: center;
+    align-self: center;
+    font-size: 20px;
+    margin: 0;
+}
+.producto__info__comprar {
+    grid-area: comprar;
+    justify-self: center;
+    align-self: center;
+    height: 50%;
+}
