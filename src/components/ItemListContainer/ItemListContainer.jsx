@@ -41,10 +41,8 @@ function ItemListContainer() {
             </section>
             <section>
                 <div className="main__contenido__productos container elementoCentrado">
-                    <div className="producto posicionInlineBlock">
-                        <div className="producto__info">
-                            <ItemList productos={productos} />
-                        </div>
+                    <div className="producto">
+                        <ItemList productos={productos} />
                     </div>
                 </div>
             </section>
