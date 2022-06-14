@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/Mavril390/Proyecto-React-MauricioMarinkovich-/static/css/main.4f2de6a9.css",
-    "main.js": "/Mavril390/Proyecto-React-MauricioMarinkovich-/static/js/main.68926e8b.js",
+    "main.css": "/Mavril390/Proyecto-React-MauricioMarinkovich-/static/css/main.bf20ef98.css",
+    "main.js": "/Mavril390/Proyecto-React-MauricioMarinkovich-/static/js/main.df4db9cc.js",
     "static/js/787.69af1a8b.chunk.js": "/Mavril390/Proyecto-React-MauricioMarinkovich-/static/js/787.69af1a8b.chunk.js",
     "static/media/Asrock-B450M-HDV.jpg": "/Mavril390/Proyecto-React-MauricioMarinkovich-/static/media/Asrock-B450M-HDV.ca4d48c580cae64fd5e3.jpg",
     "static/media/Asrock-Radeon-RX-6700-XT-12GB-GDDR6.jpg": "/Mavril390/Proyecto-React-MauricioMarinkovich-/static/media/Asrock-Radeon-RX-6700-XT-12GB-GDDR6.987f5720b1ff9a8c9de9.jpg",
     "static/media/AMD-RYZEN-5-3600.jpg": "/Mavril390/Proyecto-React-MauricioMarinkovich-/static/media/AMD-RYZEN-5-3600.06a1c6bdfbae0aec4b88.jpg",
     "static/media/GeiL-DDR4-16GB-3000MHZ-EVO-POTENZA-Black.jpg": "/Mavril390/Proyecto-React-MauricioMarinkovich-/static/media/GeiL-DDR4-16GB-3000MHZ-EVO-POTENZA-Black.b04d6276d9f0bf35775d.jpg",
     "index.html": "/Mavril390/Proyecto-React-MauricioMarinkovich-/index.html",
-    "main.4f2de6a9.css.map": "/Mavril390/Proyecto-React-MauricioMarinkovich-/static/css/main.4f2de6a9.css.map",
-    "main.68926e8b.js.map": "/Mavril390/Proyecto-React-MauricioMarinkovich-/static/js/main.68926e8b.js.map",
+    "main.bf20ef98.css.map": "/Mavril390/Proyecto-React-MauricioMarinkovich-/static/css/main.bf20ef98.css.map",
+    "main.df4db9cc.js.map": "/Mavril390/Proyecto-React-MauricioMarinkovich-/static/js/main.df4db9cc.js.map",
     "787.69af1a8b.chunk.js.map": "/Mavril390/Proyecto-React-MauricioMarinkovich-/static/js/787.69af1a8b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4f2de6a9.css",
-    "static/js/main.68926e8b.js"
+    "static/css/main.bf20ef98.css",
+    "static/js/main.df4db9cc.js"
   ]
 }
