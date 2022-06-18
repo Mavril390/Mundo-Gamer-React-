@@ -43,10 +43,18 @@ const productos = [
     }
 ]
 
-export const getProducto = (tiempo) => {
+export const getProducto = () => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             resolve(productos)
-        }, tiempo)
+        }, 2000)
     })
+}
+
+export const getProductsByCategory = (idCategoria) => {
+  return new Promise((resolve, reject) => {
+      setTimeout(() => {
+          resolve(productos.filter(prod => prod.idCategoria === idCategoria))
+      }, 500)
+  })
 }

@@ -4,7 +4,7 @@ import { Link, NavLink } from 'react-router-dom'
 
 function NavBar() {
 
-    const navbar = ["Procesador", "Mother", "Ram", "Placa", <CartWidget />];
+    const navbar = ["Procesador", "Mother", "Ram", "Placa"];
 
     return(
         <header className="header">
@@ -25,6 +25,7 @@ function NavBar() {
                                 </li>
                                 )
                             }
+                            <NavLink to={`/cart`} className="nav-link header__navegacion__lista__elemento" href="/#"><CartWidget /></NavLink>
                         </ul>
                     </div>
                 </div>

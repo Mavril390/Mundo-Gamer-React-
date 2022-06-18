@@ -1,21 +1,28 @@
 import { useState } from "react"
+import "./Counter.css"
 
-const Contador = () => {
+function Contador ({inicio = 1, stock = 0, agregar}){
 
-    const [contador, setContador] = useState(0)
-    const sumarCantidad = () => {
-        setContador(contador + 1)
+    const [cantidad, setCantidad] = useState(inicio)
+
+    const sumarUno = () => {
+        if (stock > cantidad){
+            setCantidad(cantidad + 1)
+        }
     }
-    const restarCantidad = () => {
-        setContador(contador - 1)
+    const restarUno = () => {
+        if ( cantidad > 1 )
+        setCantidad( cantidad - 1 )
     }
 
     return (
-        <div>
-            <button >Añadir al Carrito</button>
-            <button onClick={sumarCantidad}> + </button>
-            <p>{contador}</p>
-            <button onClick={restarCantidad}> - </button>
+        <div className="counter">
+            <div className="counter--grid">
+                <button className="counter__sumarCarro" onClick={() => { agregar(cantidad) }}>Sumar al Carrito</button>
+                <button className="counter__sumarProducto" onClick={sumarUno}> + </button>
+                <p className="counter__numero">{cantidad}</p>
+                <button className="counter__restarProducto" onClick={restarUno}> - </button>
+            </div>
         </div>
     )
 }

@@ -13,7 +13,7 @@ function Item({ id, nombre, precio, img, alt }) {
                 <Link className="producto__detalles" to={`/detail/${id}`}>{nombre}</Link>
             </p>
             <p className="producto__precio posicionInlineBlock">${precio}</p>
-            <a href="/#" className="producto__comprar btn--vinculo elementoCentrado">Comprar</a>
+            <Link className="producto__comprar btn--vinculo elementoCentrado" to={`/detail/${id}`}>Ver Detallas del producto</Link>
         </div>
     )
 }

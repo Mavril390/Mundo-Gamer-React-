@@ -1,0 +1,34 @@
+.counter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.counter--grid{
+    display: grid;
+    grid-template-columns: 1fr 30px 30px 30px;
+    grid-template-rows: 1fr;
+    grid-template-areas: "sumarCarro sumarProd num restarProd";
+    align-items: center;
+    justify-items: center;
+    height: 100%;
+}
+
+.counter__sumarCarro{
+    grid-area: sumarCarro;
+    width: 100%;
+}
+
+.counter__sumarProducto{
+    grid-area: sumarProd;
+}
+
+.counter__numero{
+    grid-area: num;
+    margin: 0;
+}
+
+.counter__restarProducto{
+    grid-area: restarProd;
+}

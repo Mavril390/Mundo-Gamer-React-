@@ -5,20 +5,20 @@ import { getProducto } from '../../ListaDeProductos'
 import { useParams } from 'react-router-dom'
 import { Spinner } from 'react-bootstrap'
 
-const ItemDetailContainer = () => {
+function ItemDetailContainer() {
 
     const [producto, setProducto] = useState()
     const { id } = useParams()
     const [cargando, setCargando] = useState(true)
-
+    
     useEffect(() => {
         setCargando(true)
-        getProducto(1000).then(response => {
-            setProducto(response.find(res => res.id == id))
+        getProducto(id).then(response => {
+            setProducto(response.find(res => res.id === id))
         }).finally(() => {
             setCargando(false)
         })
-    }, [])
+    }, [id])
 
     if (cargando) {
         return (

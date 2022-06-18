@@ -1,6 +1,6 @@
 import ItemList from "../ItemList/ItemList";
 import { useState, useEffect } from "react"
-import { getProducto } from '../../ListaDeProductos'
+import { getProducto, getProductsByCategory } from '../../ListaDeProductos'
 import "./ItemListContainer.css"
 import { useParams } from 'react-router-dom'
 import { Spinner } from 'react-bootstrap'
@@ -13,15 +13,24 @@ function ItemListContainer() {
 
     useEffect(() => {
         setCargando(true)
-        getProducto(2000).then(response => {
-            if (idCategoria === undefined)
-                setProductos(response)
-            else {
-                setProductos(response.filter(prod => prod.idCategoria === idCategoria))
-            }
-        }).finally(() => {
-            setCargando(false)
-        })
+
+        if(!idCategoria) {
+            getProducto().then(prods => {
+                setProductos(prods)
+            }).catch(error => {
+                console.log(error)
+            }).finally(() => {
+                setCargando(false)
+            })
+        } else {
+            getProductsByCategory(idCategoria).then(prods => {
+                setProductos(prods)
+            }).catch(error => {
+                console.log(error)
+            }).finally(() => {
+                setCargando(false)
+            })
+        }
     }, [idCategoria])
 
     if (cargando) {
