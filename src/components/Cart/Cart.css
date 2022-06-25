@@ -1,0 +1,129 @@
+.titulo{
+    text-align: center;
+    margin-top: 20px;
+}
+
+.sinProductos{
+    text-align: center;
+}
+
+.carrito{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.carrito--grid{
+    display: grid;
+    grid-template-columns: 20% 49% 15% 15% 1%;
+    grid-template-areas: "img nombre precio cant borrar";
+    width: 60%;
+    margin: 20px 0;
+    padding: 20px;
+    background-color: white;
+
+    box-shadow: 0px 10px 13px -7px #000000, 0px 3px 15px 5px rgba(0,0,0,0);
+}
+
+.carrito--titulo{
+    text-align: center;
+    color: #1f487e;
+}
+
+.carrito__img{
+    grid-area: img;
+    justify-self: center;
+    align-self: center;
+    height: 80px;
+    width: 80px;
+}
+
+.carrito__nombre{
+    grid-area: nombre;
+}
+
+.carrito__precio{
+    grid-area: precio;
+}
+
+.carrito__cantidad{
+    grid-area: cant;
+}
+
+.carrito__borrar{
+    grid-area: borrar;
+    border: 0;
+    background-color: white;
+    justify-self: end;
+    align-self: flex-start;
+}
+
+.carrito__nombre, .carrito__precio, .carrito__cantidad{
+    text-align: justify;
+    text-align-last: center;
+    font-size: 16px;
+    margin: 0;
+}
+
+.carrito__detalles{
+    width: 60%;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+}
+
+.carrito__detalles--position{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.carrito__detalles__txt{
+    font-size: 30px;
+}
+
+.carrito__detalles__button{
+
+}
+
+.button__borrarTodo{
+    background-color: rgb(204, 35, 35);
+    width: 150px;
+    margin: 20px;
+}
+
+.button__comprar{
+    background-color: rgb(9, 121, 5);
+    width: 150px;
+}
+
+@media only screen and (max-width: 1100px) {
+    .carrito--grid{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1px 1fr 1fr 80px 80px;
+        grid-template-areas: "borrar"
+                             "img" 
+                             "nombre" 
+                             "precio" 
+                             "cant";
+    }
+
+    .carrito__borrar{
+        height: 0px;
+        width: 50px;
+        justify-self: end;
+        align-self: flex-start;
+    }
+}
+
+@media only screen and (max-width: 630px) {
+    .carrito__detalles--position{
+        justify-content: center;
+    }
+
+    .carrito__detalles__button{
+        display: contents;
+    }
+}

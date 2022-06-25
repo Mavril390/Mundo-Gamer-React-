@@ -1,9 +1,11 @@
 import './ItemDetailContainer.css'
 import ItemDetail from '../ItemDetail/ItemDetail'
 import { useEffect, useState } from 'react'
-import { getProducto } from '../../ListaDeProductos'
 import { useParams } from 'react-router-dom'
 import { Spinner } from 'react-bootstrap'
+
+import { db } from '../../services/firebase'
+import { getDoc, doc } from 'firebase/firestore'
 
 function ItemDetailContainer() {
 
@@ -13,8 +15,14 @@ function ItemDetailContainer() {
     
     useEffect(() => {
         setCargando(true)
-        getProducto(id).then(response => {
-            setProducto(response.find(res => res.id === id))
+
+        const docRef = doc(db, 'productos', id)
+
+        getDoc(docRef).then(doc => {
+            const productoFirebase = { id: doc.id, ...doc.data()}
+            setProducto(productoFirebase)
+        }).catch(error => {
+            console.log(error)
         }).finally(() => {
             setCargando(false)
         })

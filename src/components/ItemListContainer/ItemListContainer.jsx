@@ -1,9 +1,11 @@
 import ItemList from "../ItemList/ItemList";
 import { useState, useEffect } from "react"
-import { getProducto, getProductsByCategory } from '../../ListaDeProductos'
 import "./ItemListContainer.css"
 import { useParams } from 'react-router-dom'
 import { Spinner } from 'react-bootstrap'
+
+import { getDocs, collection, query, where } from 'firebase/firestore'
+import { db } from '../../services/firebase'
 
 function ItemListContainer() {
 
@@ -14,23 +16,21 @@ function ItemListContainer() {
     useEffect(() => {
         setCargando(true)
 
-        if(!idCategoria) {
-            getProducto().then(prods => {
-                setProductos(prods)
-            }).catch(error => {
-                console.log(error)
-            }).finally(() => {
-                setCargando(false)
+        const collectionRef = idCategoria ? (
+            query(collection(db, 'productos'), where('idCategoria', '==', idCategoria))
+        ) : ( collection(db, 'productos') )
+
+        getDocs(collectionRef).then(response => {
+            const productosFirestore = response.docs.map(doc => {
+                return { id: doc.id, ...doc.data()}
             })
-        } else {
-            getProductsByCategory(idCategoria).then(prods => {
-                setProductos(prods)
-            }).catch(error => {
-                console.log(error)
-            }).finally(() => {
-                setCargando(false)
-            })
-        }
+            setProductos(productosFirestore)
+        }).catch(error => {
+            console.log(error)
+        }).finally(() => {
+            setCargando(false)
+        })
+
     }, [idCategoria])
 
     if (cargando) {

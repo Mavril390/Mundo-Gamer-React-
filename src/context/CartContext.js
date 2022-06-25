@@ -6,6 +6,7 @@ export function CartProvider ({ children }) {
 
     const [carrito, setCarrito] = useState([])
     const [cantidadTotal, setcantidadTotal] = useState(0)
+    const [precioTotal, setPrecioTotal] = useState(0)
 
     useEffect(() => {
         let cantidadTotal = 0
@@ -13,6 +14,14 @@ export function CartProvider ({ children }) {
             cantidadTotal += prod.cant
         })
         setcantidadTotal(cantidadTotal)
+    }, [carrito])
+
+    useEffect(() =>{
+        let precioTotal = 0
+        carrito.forEach(prod => {
+            precioTotal += prod.precio
+        });
+        setPrecioTotal(precioTotal)
     }, [carrito])
 
     const agregarProducto = (producto) => {
@@ -30,13 +39,19 @@ export function CartProvider ({ children }) {
         return carrito.some(prod => prod.id === id)
     }
 
+    const clearCart = () => {
+        setCarrito([])
+    }
+
     return (
         <CartContext.Provider value={{
             carrito,
             cantidadTotal,
+            precioTotal,
             agregarProducto,
             eliminarProducto,
             estaEnCarrito,
+            clearCart,
         }}>
             {children}
         </CartContext.Provider>

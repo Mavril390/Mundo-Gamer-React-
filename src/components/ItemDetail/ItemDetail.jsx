@@ -3,16 +3,20 @@ import Counter from "../Counter/Counter"
 import CartContext from "../../context/CartContext"
 import { useContext, useState } from "react"
 import { Link } from 'react-router-dom'
+import { useNotification } from '../Notification/Notification'
 
 function ItemDetail ({id, nombre, precio, img, stock, descripcion }) {
 
     const [cantidadAgregada, setCantidadAgregada] = useState(0)
     const { agregarProducto } = useContext(CartContext)
-    
+    const setNotification = useNotification()
 
     const añadirCarrito = (cant) => {
+        precio = precio * cant
+
         console.log(`se agregaron ${cant} ${nombre}`)
-        agregarProducto({id, nombre, precio, cant})
+        setNotification('success', `se agregaron ${cant} ${nombre}`)
+        agregarProducto({id, nombre, precio, img, cant})
         setCantidadAgregada(cant)
     }
 

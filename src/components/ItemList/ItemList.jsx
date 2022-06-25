@@ -1,4 +1,5 @@
 import Item from "../Item/Item"
+import { memo } from 'react'
 
 function ItemList({productos}){
     return(
@@ -12,4 +13,4 @@ function ItemList({productos}){
     )
 }
 
-export default ItemList;
+export default memo(ItemList);

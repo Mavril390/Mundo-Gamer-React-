@@ -1,10 +1,13 @@
-import CartWidget from "../Cart/CartWidget";
+import CartWidget from "../CartWidget/CartWidget";
 import "./NavBar.css"
+import { useContext }from 'react'
+import CartContext from '../../context/CartContext'
 import { Link, NavLink } from 'react-router-dom'
 
 function NavBar() {
 
     const navbar = ["Procesador", "Mother", "Ram", "Placa"];
+    const { cantidadTotal } = useContext(CartContext)
 
     return(
         <header className="header">
@@ -25,7 +28,11 @@ function NavBar() {
                                 </li>
                                 )
                             }
-                            <NavLink to={`/cart`} className="nav-link header__navegacion__lista__elemento" href="/#"><CartWidget /></NavLink>
+                            {
+                                cantidadTotal === 0
+                                ? null
+                                : <NavLink to={`/cart`} className="nav-link header__navegacion__lista__elemento" href="/#"><CartWidget /></NavLink>
+                            }
                         </ul>
                     </div>
                 </div>
