@@ -1,6 +1,7 @@
 # Mundo Gamer
 
 Hecho por Mauricio Marinkovich
+![Mundo Gamer - Opera 2022-07-11 17-42-54](https://user-images.githubusercontent.com/38568394/178357619-2b1fbc64-4597-456c-8ee4-9c2b3539aa3a.gif)
 ![Uploading Mundo Gamer - Opera 2022-07-11 17-42-54.gif…]()
 
 ## Descripción
