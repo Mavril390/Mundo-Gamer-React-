@@ -17,11 +17,11 @@
 
 .counter__sumarCarro{
     grid-area: sumarCarro;
-    width: 100%;
 }
 
 .counter__sumarProducto{
     grid-area: sumarProd;
+    font-size: 30px;
 }
 
 .counter__numero{
@@ -31,4 +31,19 @@
 
 .counter__restarProducto{
     grid-area: restarProd;
+}
+
+.btn-counter{
+    background-color: #376996;
+    border: 1px solid black;
+    font-size: 15px;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    transition: 0.5s all;
+}
+
+.btn-counter:hover {
+    background-color: #d8d4d5;
+    color: #1f487e;
 }

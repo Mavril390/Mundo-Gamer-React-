@@ -22,7 +22,6 @@ const Notification = ({ message, severity, otherClass }) => {
     if(message === '') return
 
     return (
-        // <div style={notificationStyle} className={`${severity === 'error' ? 'Error' : 'Success'} ${otherClass || ''}`}>
         <div {...config}>
             { message }
         </div>
@@ -51,7 +50,6 @@ export const NotificationProvider = ({ children }) => {
 
     return(
         <NotificationContext.Provider value={ setNotification }>
-            {/* { msgConfig.message !== '' && <Notification message={msgConfig.message} severity={msgConfig.severity}/> } */}
             <Notification message={msgConfig.message} severity={msgConfig.severity} otherClass={otherClass}/>
             { children }
         </NotificationContext.Provider>

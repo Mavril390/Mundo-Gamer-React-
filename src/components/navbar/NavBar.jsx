@@ -1,5 +1,6 @@
 import CartWidget from "../CartWidget/CartWidget";
 import "./NavBar.css"
+import { Navbar, Nav, Container } from "react-bootstrap"
 import { useContext }from 'react'
 import CartContext from '../../context/CartContext'
 import { Link, NavLink } from 'react-router-dom'
@@ -10,34 +11,28 @@ function NavBar() {
     const { cantidadTotal } = useContext(CartContext)
 
     return(
-        <header className="header">
-            <nav className="navbar navbar-expand-lg container sticky-top navbar-dark">
-                <div className="container-fluid">
-                    <Link to='/' className="navbar-brand" href="/#">Mundo Gamer</Link>
-                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                        <span className="navbar-toggler-icon"></span>
-                    </button>
-                    <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul className="navbar-nav mb-2 mb-lg-0 header__navegacion__lista">
-                            {
-                            navbar.map(item =>
-                                <li className="nav-item">
-                                    <NavLink to={`/category/${item}`} className="nav-link header__navegacion__lista__elemento" href="/#">{item}</NavLink>
-                                </li>
-                                )
-                            }
-                            {
-                                cantidadTotal === 0
-                                ? null
-                                : <NavLink to={`/cart`} className="nav-link header__navegacion__lista__elemento" href="/#"><CartWidget /></NavLink>
-                            }
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </header>
+        <>
+        <Navbar bg="dark" variant="dark" className="navbar-dark" expand="lg">
+            <Container>
+            <Navbar.Brand href="#home"><Link to='/' className="navbar__title">Mundo Gamer</Link></Navbar.Brand>
+            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            <Navbar.Collapse id="justify-content-end">
+                <Nav className="me-auto">
+                    {
+                        navbar.map(item =>
+                        <Nav.Link><NavLink to={`/category/${item}`} className="nav-link header__navegacion__lista__elemento" href="/#">{item}</NavLink></Nav.Link>
+                        )
+                    }
+                    {
+                        cantidadTotal === 0
+                        ? null
+                        : <Nav.Link><NavLink to={`/cart`} className="nav-link header__navegacion__lista__elemento" href="/#"><CartWidget /></NavLink></Nav.Link>
+                    }
+                </Nav>
+                </Navbar.Collapse>
+            </Container>
+        </Navbar>
+        </>
     );
 }
 

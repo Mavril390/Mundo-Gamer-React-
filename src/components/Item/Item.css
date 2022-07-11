@@ -14,8 +14,12 @@
 .producto__img {
     grid-area: img;
     justify-self: center;
+    align-self: center;
     height: 200px;
     width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .producto__nombre {
@@ -24,14 +28,19 @@
     justify-self: center;
     align-self: center;
     font-size: 20px;
+    font-weight: 500;
     margin: 0;
 }
+
 .producto__precio {
     grid-area: precio;
     justify-self: center;
     align-self: center;
     font-size: 20px;
     margin: 0;
+    font-size: 30px;
+    color: #1f487e;
+    font-weight: 400;
 }
 .producto__comprar {
     grid-area: comprar;

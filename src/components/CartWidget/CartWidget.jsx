@@ -3,7 +3,7 @@ import CartContext from '../../context/CartContext'
 
 function CartWidget() {
 
-    const { getCantidadTotal, cantidadTotal } = useContext(CartContext)
+    const { cantidadTotal } = useContext(CartContext)
 
     return(
         <div>

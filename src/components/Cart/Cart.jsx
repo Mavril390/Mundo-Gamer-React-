@@ -5,12 +5,8 @@ import './Cart.css'
 
 function Cart(){
 
-    const { carrito, eliminarProducto, precioTotal, clearCart, cantidadTotal } = useContext(CartContext)
-
-    const borrarProducto = (id) => {
-        eliminarProducto(id)
-    }
-
+    const { carrito, eliminarProducto, clearCart, cantidadTotal, getTotal } = useContext(CartContext)
+    
     return(
         <div>
             <h1 className='titulo'> Carrito </h1>
@@ -25,31 +21,31 @@ function Cart(){
                                 <p>{item.nombre}</p>
                             </div>
                             <div className='carrito__precio'>
-                                <p className='carrito--titulo'> <b>Precio</b> </p>
+                                <p className='carrito--titulo'> <b>Precio unitario</b> </p>
                                 <p>${item.precio}</p>
                             </div>
                             <div className='carrito__cantidad'>
                                 <p className='carrito--titulo'> <b>Cantidad</b> </p>
                                 <p>{item.cant}</p>
                             </div>
-                            <button onClick={() => {borrarProducto(item.id)}} className='carrito__borrar'><b>X</b></button>
+                            <button onClick={() => {eliminarProducto(item.id)}} className='carrito__borrar'><b>X</b></button>
                         </div>
                         )}
                         <div className='carrito__detalles'>
                             <div className='carrito__detalles--position'>
                                 <div className='carrito__detalles__txt'>
-                                    Total <b>${precioTotal}</b>
+                                    Total <b>${getTotal()}</b>
                                 </div>
                                 <div className='carrito__detalles__button'>
                                     <button onClick={() => {clearCart()}} className='button__borrarTodo btn--vinculo'><b>Borrar Todo</b></button>
-                                    <button onClick={() => {}} className='button__comprar btn--vinculo'><b>Comprar</b></button>
+                                    <Link to={'/checkout'}> <button className='button__comprar btn--vinculo'><b>Crear Orden</b></button></Link>
                                 </div>
                             </div>
                         </div>
                     </div>
                     :<div className='sinProductos'>
                         <p>No hay ningun producto en el carrito</p>
-                        <Link to='/'>Compre aqui</Link>
+                        <Link to='/'>Volver al inicio</Link>
                     </div>
             }
         </div>

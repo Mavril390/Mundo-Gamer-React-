@@ -13,7 +13,7 @@
     grid-template-rows: 100px 100px 100px 1fr;
     grid-template-areas: "img nombre nombre"
                          "img precio counter"
-                         "img . ."
+                         "img . stock"
                          "des des des";
 
     margin: 40px;
@@ -29,14 +29,14 @@
 
 .producto__detalles__nombre{
     grid-area: nombre;
-    text-align: justify;
+    text-align: center;
 }
 
 .producto__detalles__precio {
     grid-area: precio;
     font-size: 30px;
     color: #1f487e;
-    font-weight: initial;
+    font-weight: 500;
     align-self: center;
 }
 
@@ -44,26 +44,47 @@
     grid-area: counter;
 }
 
-.producto__detalles__descripcion{
+.producto__detalles__stock{
+    grid-area: stock;
+    text-align: center;
+    font-size: 20px;
+}
+
+.producto__detalles--add{
     grid-area: des;
     padding: 13px;
     font-weight: initial;
-    font-size: 22px;
-    text-align: justify;
+    font-size: 17px;
 }
 
-@media only screen and (max-width: 1465px){
-    .producto__detalles--grid{
-        grid-template-columns: 50% 50%;
-        grid-template-rows: 150px 50px 50px 1fr;
-        grid-template-areas: "img nombre"
-                             "img precio"
-                             "img counter"
-                             "des des";
-    }
+.detalles--add{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
 }
 
-@media only screen and (max-width: 1055px){
+.add{
+    display: flex;
+    width: 60%;
+    padding: 5px;
+}
+
+.add__key{
+    width: 54%;
+}
+
+.add--key{
+    color: #bb1313;
+    text-align: center;
+}
+
+.add__value{
+    width: 35%;
+}
+
+@media only screen and (max-width: 1470px){
     .producto__detalles--grid{
         grid-template-columns: 1fr;
         grid-template-rows: 1fr;
@@ -71,6 +92,29 @@
                              "nombre"
                              "precio"
                              "counter"
+                             "stock"
                              "des";
+    }
+
+    .producto__detalles__imagen{
+        width: 70%;
+        align-self: center;
+        justify-self: center;
+    }
+
+    .add{
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 930px){
+    .add{
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 600px){
+    .producto__detalles--grid{
+        width: 80%;
     }
 }

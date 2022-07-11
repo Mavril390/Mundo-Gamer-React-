@@ -18,10 +18,10 @@ function Contador ({inicio = 1, stock = 0, agregar}){
     return (
         <div className="counter">
             <div className="counter--grid">
-                <button className="counter__sumarCarro" onClick={() => { agregar(cantidad) }}>Sumar al Carrito</button>
-                <button className="counter__sumarProducto" onClick={sumarUno}> + </button>
+                <button className="counter__sumarCarro btn-counter" onClick={() => { agregar(cantidad) }}>Sumar al Carrito</button>
+                <button className="counter__sumarProducto btn-counter" onClick={sumarUno}> + </button>
                 <p className="counter__numero">{cantidad}</p>
-                <button className="counter__restarProducto" onClick={restarUno}> - </button>
+                <button className="counter__restarProducto btn-counter" onClick={restarUno}> - </button>
             </div>
         </div>
     )
